@@ -3,25 +3,22 @@
 
   angular
     .module('vimeoTest')
-    .directive('acmeNavbar', acmeNavbar);
+    .directive('sideBar', sideBar);
 
   /** @ngInject */
-  function acmeNavbar() {
-    var directive = {
+  function sideBar() {
+    
+    return {
       restrict: 'E',
-      templateUrl: 'app/components/navbar/navbar.html',
-      scope: {
-          creationDate: '='
-      },
-      controller: NavbarController,
+      templateUrl: 'app/components/sidebar/sidebar.html',
+      scope: {},
+      controller: sidebarController,
       controllerAs: 'vm',
       bindToController: true
-    };
-
-    return directive;
+    }
 
     /** @ngInject */
-    function NavbarController(moment) {
+    function sidebarController(moment) {
       var vm = this;
 
       // "vm.creationDate" is available by directive option "bindToController: true"
