@@ -9,8 +9,7 @@
   function mainController(categoriesList) {
     var vm = this;
     vm.list = categoriesList;
-    vm.showCategoryVideos = function(category) {
-      console.log(category);
+    vm.getCategoryId = function() {
     };
   }
 

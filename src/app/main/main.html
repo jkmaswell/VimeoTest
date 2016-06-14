@@ -2,26 +2,25 @@
   <div class="row">
 
     <aside>
-      <div class="col-md-4">
-        <side-bar list="mainCtrl.list" click="mainCtrl.showCategoryVideos(category)"></side-bar>
+      <div class="sidebar padding">
+        <side-bar list="mainCtrl.list" click="mainCtrl.getCategoryId"></side-bar>
       </div>
     </aside>
 
-    <div class="col-md-8">
+    <div class="categories">
 
-      <header>
-
-      </header>
+      <header></header>
 
       <main>
-        <div class="col-md-8">
-          <div ui-view=""></div>
-        </div>
+        <div ui-view=""></div>
       </main>
 
       <footer>
-
+        <div class="footer padding">
+          Powered by talos digital
+        </div>
       </footer>
+
     </div>
   </div>
 </div>

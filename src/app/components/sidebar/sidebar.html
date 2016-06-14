@@ -1,5 +1,8 @@
-<nav class="">
+<nav>
+  <div class="logo">
+    <img src="../../assets/images/vimeotest-logo.svg">
+  </div>
   <ul>
-    <li ng-repeat="item in list"><a ng-click="click">{{item.name}}</a></li>
+    <li ng-repeat="item in list | limitTo:8"><a ng-click="click">{{item.name}}</a></li>
   </ul>
 </nav>

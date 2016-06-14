@@ -11,7 +11,7 @@
 
       //Parent state
       .state('home', {
-        url: '/',
+        url: '/category/',
         templateUrl: 'app/main/main.html',
         resolve: {
           categoriesList: function(categoriesFactory) {
@@ -38,7 +38,7 @@
         controllerAs: 'mainCtrl'
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/category/');
   }
 
 })();
