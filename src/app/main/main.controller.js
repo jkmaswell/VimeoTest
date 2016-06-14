@@ -3,11 +3,15 @@
 
   angular
     .module('vimeoTest')
-    .controller('mainController', mainController);
+    .controller('MainController', mainController);
 
   /** @ngInject */
-  function mainController() {
-
+  function mainController(categoriesList) {
+    var vm = this;
+    vm.list = categoriesList;
+    vm.showCategoryVideos = function(category) {
+      console.log(category);
+    };
   }
 
 })();

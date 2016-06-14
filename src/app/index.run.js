@@ -6,9 +6,8 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log) {
-
-    $log.debug('runBlock end');
+  function runBlock($http, VimeoApiKey) {
+    $http.defaults.headers.common.Authorization = 'Bearer ' + VimeoApiKey.vimeoAccessToken;
   }
 
 })();

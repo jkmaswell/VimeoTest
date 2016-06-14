@@ -1,10 +1,27 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4">
-      <side-bar></side-bar>
-    </div>
+
+    <aside>
+      <div class="col-md-4">
+        <side-bar list="mainCtrl.list" click="mainCtrl.showCategoryVideos(category)"></side-bar>
+      </div>
+    </aside>
+
     <div class="col-md-8">
 
+      <header>
+
+      </header>
+
+      <main>
+        <div class="col-md-8">
+          <div ui-view=""></div>
+        </div>
+      </main>
+
+      <footer>
+
+      </footer>
     </div>
   </div>
 </div>

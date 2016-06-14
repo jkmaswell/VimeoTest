@@ -1,10 +1,11 @@
-/* global malarkey:false, moment:false */
 (function() {
   'use strict';
 
   angular
     .module('vimeoTest')
-    .constant('malarkey', malarkey)
-    .constant('moment', moment);
+    .constant('VimeoApiKey', {
+      vimeoBaseUrl: 'https://api.vimeo.com/',
+      vimeoAccessToken: 'c44e7b42eadcdc9c870e59452b1dfb9c'
+    });
 
 })();
