@@ -3,37 +3,17 @@
 
   angular
     .module('vimeoTest')
-    .controller('MainController', MainController);
+    .controller('MainController', mainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function mainController($state, categoriesLinks, videosList, VimeoApiKey) {
     var vm = this;
+    vm.links = categoriesLinks;
+    vm.videos = videosList;
 
-    vm.awesomeThings = [];
-    vm.classAnimation = '';
-    vm.creationDate = 1464726503184;
-    vm.showToastr = showToastr;
-
-    activate();
-
-    function activate() {
-      getWebDevTec();
-      $timeout(function() {
-        vm.classAnimation = 'rubberBand';
-      }, 4000);
-    }
-
-    function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-      vm.classAnimation = '';
-    }
-
-    function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
-
-      angular.forEach(vm.awesomeThings, function(awesomeThing) {
-        awesomeThing.rank = Math.random();
-      });
-    }
+    // vm.videos = function(videosList) {
+    //   $state.go('home.category', {categoryName: videosList.id});
+    // };
   }
+
 })();
