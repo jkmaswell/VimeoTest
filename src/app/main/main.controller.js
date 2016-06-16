@@ -6,11 +6,14 @@
     .controller('MainController', mainController);
 
   /** @ngInject */
-  function mainController(categoriesList) {
+  function mainController($state, categoriesLinks, videosList, VimeoApiKey) {
     var vm = this;
-    vm.list = categoriesList;
-    vm.getCategoryId = function() {
-    };
+    vm.links = categoriesLinks;
+    vm.videos = videosList;
+
+    // vm.videos = function(videosList) {
+    //   $state.go('home.category', {categoryName: videosList.id});
+    // };
   }
 
 })();

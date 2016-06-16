@@ -11,32 +11,54 @@
 
       //Parent state
       .state('home', {
-        url: '/category/',
-        templateUrl: 'app/main/main.html',
+        abstract: true,
+        url: '',
+        params: {},
         resolve: {
           categoriesList: function(categoriesFactory) {
             return categoriesFactory.allCategoriesList();
+          },
+          categoriesLinks: function (categoriesFactory, categoriesList) {
+            return categoriesFactory.allCategoriesLinks(categoriesList);
           }
-        },
-        controller: 'MainController',
-        controllerAs: 'mainCtrl'
+        }
       })
 
       //Category Videos List State
       .state('home.category', {
         url:'/category/{categoryName}',
-        params: {
-          categoryName: ''
-        },
-        templateUrl: 'app/components/categories/categories.html',
         resolve: {
           videosList: function ($stateParams, categoriesFactory) {
-            return categoriesFactory.allVideosList($stateParams.categoryName);
+            return categoriesFactory.allCategoriesVideos($stateParams.categoryName)
           }
         },
-        controller: 'MainController',
-        controllerAs: 'mainCtrl'
+        onEnter: function($state, $stateParams, categoriesList){
+          if (!$stateParams.categoryName && categoriesList.length > 0) {
+            $state.go('home.category', {'categoryName': categoriesList[0].id, 'page': 1 });
+          }
+        },
+        views: {
+          'main@': {
+            templateUrl: 'app/main/main.html',
+            controller: 'MainController',
+            controllerAs: 'mainCtrl'
+          }
+        }
       });
+
+      //Category Videos Detail State
+      // .state('home.detail', {
+      //   url:'{videoId}',
+      //   params: {
+      //     videoId: ''
+      //   },
+      //   templateUrl: 'app/components/videos/videos.html',
+      //   resolve: {
+      //    videosDetail: function ($stateParams, categoriesFactory) {
+      //      return categoriesFactory.allVideosDetail($stateParams.videoId);
+      //    }
+      //   }
+      // });
 
     $urlRouterProvider.otherwise('/category/');
   }

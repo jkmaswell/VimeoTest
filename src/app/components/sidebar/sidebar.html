@@ -3,6 +3,8 @@
     <img src="../../assets/images/vimeotest-logo.svg">
   </div>
   <ul>
-    <li ng-repeat="item in list | limitTo:8"><a ng-click="click">{{item.name}}</a></li>
+    <li ng-repeat="link in links | limitTo: 8" ui-sref-active="active">
+      <a ui-sref="{{link.state}}({{link.params}})">{{link.name}}</a>
+    </li>
   </ul>
 </nav>

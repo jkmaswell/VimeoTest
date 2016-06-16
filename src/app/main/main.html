@@ -3,7 +3,7 @@
 
     <aside>
       <div class="sidebar padding">
-        <side-bar list="mainCtrl.list" click="mainCtrl.getCategoryId"></side-bar>
+        <side-bar links="mainCtrl.links"></side-bar>
       </div>
     </aside>
 
@@ -12,7 +12,14 @@
       <header></header>
 
       <main>
-        <div ui-view=""></div>
+        <div ng-repeat="itemVideo in mainCtrl.videos" class="col-md-2">
+          <a>
+            <figure>
+              <img ng-src="{{itemVideo.pictures.sizes[5].link}}">
+              <figcaption>{{itemVideo.name}}</figcaption>
+            </figure>
+          </a>
+        </div>
       </main>
 
       <footer>

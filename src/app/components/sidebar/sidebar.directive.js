@@ -13,8 +13,7 @@
       templateUrl: 'app/components/sidebar/sidebar.html',
       replace: true,
       scope: {
-        list: '=',
-        click: '&'
+        links: '='
       },
       link: function() {
       }
