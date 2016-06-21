@@ -9,25 +9,40 @@
 
     <div class="categories">
 
-      <header></header>
+      <header>
+        <div class="header">
+          <search></search>
+        </div>
+      </header>
 
       <main>
-        <div ng-repeat="itemVideo in mainCtrl.videos" class="col-md-2">
-          <a>
+
+        <div ng-repeat="itemVideo in mainCtrl.videos" class="col-md-3 video">
+          <a ng-click="mainCtrl.goToVideoDetail(itemVideo.id)">
             <figure>
-              <img ng-src="{{itemVideo.pictures.sizes[5].link}}">
+              <div class="image">
+                <img ng-src="{{itemVideo.pictures.sizes[3].link}}">
+              </div>
               <figcaption>{{itemVideo.name}}</figcaption>
             </figure>
           </a>
         </div>
+
+        <div class="pagination-container">
+          <uib-pagination
+            total-items="mainCtrl.total"
+            ng-model="mainCtrl.page"
+            max-size="mainCtrl.maxSize"
+            class="pagination"
+            items-per-page="mainCtrl.perPage"
+            ng-change="mainCtrl.changePage()"
+            boundary-link-numbers="true"
+            rotate="false">
+          </uib-pagination>
+        </div>
       </main>
 
-      <footer>
-        <div class="footer padding">
-          Powered by talos digital
-        </div>
-      </footer>
-
     </div>
+
   </div>
 </div>

@@ -3,82 +3,8 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 // bower:scss
 // endbower
 
+@import 'sass/fonts';
 @import 'sass/variables';
-
-//Fonts
-//----------------------------------
-
-@font-face {
-  font-family: 'Avenir Next Lt Pro';
-  src: url("../assets/fonts/avenirnextltpro/AvenirNextLTPro-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Avenir Next Lt Pro';
-  src: url("../assets/fonts/avenirnextltpro/AvenirNextLTPro-Demi.woff") format("woff");
-  font-weight: 500;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Avenir Next Lt Pro';
-  src: url("../assets/fonts/avenirnextltpro/AvenirNextLTPro-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Avenir Next Lt Pro Condensed';
-  src: url("../assets/fonts/avenirnextltpro/AvenirNextLTPro-Cn.woff") format("woff");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Avenir Next Lt Pro Condensed';
-  src: url("../assets/fonts/avenirnextltpro/AvenirNextLTPro-BoldCn.woff") format("woff");
-  font-weight: 700;
-  font-style: normal; }
-
-html {
-  height: 100%;
-}
-
-body {
-  font-family: $avenir;
-  font-size: 10px;
-  font-weight: 400;
-  min-height: 100%;
-}
-
-img {
-  max-width: 100%;
-}
-
-a {
-  transition: all 0.3s ease-in-out;
-
-  &:hover,
-  &:focus,
-  &:active,
-  &:visited {
-    text-decoration: none;
-  }
-}
-
-.main {
-  min-height: 100%;
-}
-
-.padding {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.no-padding {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
