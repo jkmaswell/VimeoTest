@@ -8,10 +8,9 @@
   /** @ngInject */
   function categoriesFactory($http, VimeoApiKey) {
 
-    //Object That Has The Categories Id and Links
     return {
 
-      //List of all categories
+      //Get list of all categories
       allCategoriesList:
       function () {
         return $http.get(VimeoApiKey.vimeoBaseUrl + 'categories').then (
@@ -34,7 +33,8 @@
             name: category.name,
             state: 'home.category',
             params: {
-              categoryName: category.id
+              categoryName: category.id,
+              page: '1'
             }
           };
           return categoryLink;
@@ -42,19 +42,33 @@
         return categoryLinks;
       },
 
-      //List of all videos of a category
+      //Get list of videos of a category
       allCategoriesVideos:
-      function(category){
-        return $http.get(VimeoApiKey.vimeoBaseUrl + 'categories/' + category + '/videos?page=1&per_page=12').then (
+      function(category, page, perPage){
+        return $http.get(VimeoApiKey.vimeoBaseUrl + 'categories/' + category + '/videos' + '?page=' + page + '&per_page=' + perPage).then (
           function success(response) {
             response.data.data.forEach(function(element) {
               element.id = element.uri.split('/').pop();
             });
-            return response.data.data;
+            return response.data;
           },
           function error(error) {return error;}
         );
-      }
+      },
+
+      //Get list of videos by search
+      allSearchVideos:
+        function(page, perPage, query){
+          return $http.get(VimeoApiKey.vimeoBaseUrl + 'videos/' + '?page=' + page + '&per_page=' + perPage + '&query=' + query).then (
+            function success(response) {
+              response.data.data.forEach(function(element) {
+                element.id = element.uri.split('/').pop();
+              });
+              return response.data;
+            },
+            function error(error) {return error;}
+          );
+        }
     };
   }
 

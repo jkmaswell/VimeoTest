@@ -1,1 +1,51 @@
-detalle video
+<div class="container-fluid">
+  <div class="row">
+
+    <aside>
+      <div class="sidebar padding">
+        <side-bar links="videoCtrl.links"></side-bar>
+      </div>
+    </aside>
+
+    <div class="categories detail">
+
+      <header>
+        <div class="header">
+          <search></search>
+        </div>
+      </header>
+
+      <main>
+        <div class="col-md-12 no-padding">
+
+          <div ng-bind-html="videoCtrl.details.iframe" class="player"></div>
+
+          <div class="stats">
+            <div class="plays">{{videoCtrl.details.stats.plays | thousandSuffix}}</div>
+            <div class="likes">{{videoCtrl.details.metadata.connections.likes.total | thousandSuffix}}</div>
+            <div class="comments">{{videoCtrl.details.metadata.connections.comments.total | thousandSuffix}}</div>
+          </div>
+
+          <div class="info padding">
+
+            <div class="video-title">
+              <div class="user-img">
+                <img ng-src="{{videoCtrl.details.user.pictures.sizes[1].link}}" alt="">
+              </div>
+              <div class="title">
+                <h1>{{videoCtrl.details.name}}</h1>
+                <p>of <span>{{videoCtrl.details.user.name}}</span> | since <span class="date" am-time-ago="videoCtrl.details.release_time"></span></p>
+              </div>
+            </div>
+
+            <div class="description">
+              {{videoCtrl.details.description}}
+            </div>
+
+          </div>
+        </div>
+      </main>
+
+    </div>
+  </div>
+</div>

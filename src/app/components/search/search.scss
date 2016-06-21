@@ -1,0 +1,27 @@
+.search {
+  display: inline-block;
+  position: relative;
+
+  input {
+    border: 1px solid $vimeo-gray;
+    border-radius: 50px;
+    color: $vimeo-darkergray;
+    font-size: 1.3rem;
+    height: 45px;
+    line-height: 4.5rem;
+    padding: 0 20px;
+    width: 300px;
+  }
+
+  button {
+    background: url("../../../assets/images/vimeotest-assets.png") no-repeat;
+    background-position: 0 -27px;
+    cursor: pointer;
+    height: 26px;
+    margin-top: -13px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    width: 26px;
+  }
+}
