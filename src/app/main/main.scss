@@ -37,29 +37,61 @@ html {
         padding-left: 322px;
         width: 100%;
 
+        @media screen and (max-width: 1024px) {
+          padding: 0;
+        }
+
         .header {
           background: $vimeo-lightgray;
           border-bottom: 1px solid $vimeo-gray;
           padding: 25px 15px;
+          position: relative;
           text-align: right;
+
+          .menu {
+            background: url("../../assets/images/vimeotest-assets.png") 0 0 no-repeat;
+            border: none;
+            display: none;
+            height: 26px;
+            left: 15px;
+            margin-top: -13px;
+            position: absolute;
+            top: 50%;
+            width: 37px;
+
+            @media screen and (max-width: 1024px) {
+              display: block;
+            }
+          }
         }
 
         .col-md-3 {
 
-          @media screen and (min-width: 1024px) and (max-width: 1366px) {
+          @media screen and (min-width: 1367px) {
+            &:nth-child(4n+1) {
+              clear: both;
+            }
+          }
+
+          @media screen and (min-width: 1025px) and (max-width: 1366px) {
             width: 33.333333%;
+
+            &:nth-child(3n+1) {
+              clear: both;
+            }
           }
 
           @media screen and (min-width: 768px) and (max-width: 1024px) {
             float: left;
             width: 50%;
+
+            &:nth-child(2n+1) {
+              clear: both;
+            }
           }
 
           @media screen and (max-width: 767px) {
-            min-height: auto;
           }
-
-
         }
 
         .video {
@@ -73,6 +105,7 @@ html {
                 background: $vimeo-black;
                 margin-bottom: 1rem;
                 overflow: hidden;
+                text-align: center;
 
                 @media screen and (min-width: 768px) and (max-width: 1366px) {
                 }
