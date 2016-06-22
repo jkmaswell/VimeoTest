@@ -2,7 +2,7 @@
   <div class="row">
 
     <aside>
-      <div class="sidebar padding">
+      <div class="sidebar padding active">
         <side-bar links="mainCtrl.links"></side-bar>
       </div>
     </aside>
@@ -11,13 +11,14 @@
 
       <header>
         <div class="header">
+          <button class="menu"></button>
           <search></search>
         </div>
       </header>
 
       <main>
 
-        <div ng-repeat="itemVideo in mainCtrl.videos" class="col-md-3 video">
+        <div ng-repeat="itemVideo in mainCtrl.videos" class="col-md-3 video animated fadeIn">
           <a ng-click="mainCtrl.goToVideoDetail(itemVideo.id)">
             <figure>
               <div class="image">
