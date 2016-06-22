@@ -22,6 +22,11 @@
             menuContent = angular.element('.sidebar'),
             logoContent = angular.element('.logo');
 
+        scope.closeNav = function () {
+          menuContent.removeClass('deactive');
+          menuContent.addClass('active');
+        };
+
         if (angular.element(window).width() <= 1024) {
           menuContent.removeClass('active');
           menuContent.addClass('deactive');

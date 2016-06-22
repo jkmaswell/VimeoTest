@@ -12,6 +12,18 @@
     $rootScope.$on('searchQuery', function (event, data) {
       $state.go('home.search', { query: data, page: 1 });
     });
+
+    $rootScope.$on('$stateChangeStart', function (event, toState) {
+      if (toState.resolve) {
+        $rootScope.$broadcast('loadingSt', '');
+      }
+    });
+
+    $rootScope.$on('$stateChangeSuccess', function (event, toState) {
+      if (toState.resolve) {
+        $rootScope.$broadcast('loadedSt', '');
+      }
+    });
   }
 
 })();

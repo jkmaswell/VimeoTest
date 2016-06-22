@@ -1,49 +1,50 @@
-<div class="container-fluid">
-  <div class="row">
+<section>
+  <div class="container-fluid animated fadeIn">
+    <div class="row">
 
-    <aside>
-      <div class="sidebar padding active">
+      <aside>
         <side-bar links="mainCtrl.links"></side-bar>
+      </aside>
+
+      <div class="categories">
+
+        <header>
+          <div class="header">
+            <button class="menu"></button>
+            <search></search>
+          </div>
+        </header>
+
+        <main>
+
+          <div ng-repeat="itemVideo in mainCtrl.videos" class="col-md-3 video animated fadeIn">
+            <a ng-click="mainCtrl.goToVideoDetail(itemVideo.id)">
+              <figure>
+                <div class="image">
+                  <img ng-src="{{itemVideo.pictures.sizes[3].link}}">
+                </div>
+                <figcaption>{{itemVideo.name}}</figcaption>
+              </figure>
+            </a>
+          </div>
+
+          <div class="pagination-container">
+            <uib-pagination
+              total-items="mainCtrl.total"
+              ng-model="mainCtrl.page"
+              max-size="mainCtrl.maxSize"
+              class="pagination"
+              items-per-page="mainCtrl.perPage"
+              ng-change="mainCtrl.changePage()"
+              boundary-link-numbers="true"
+              rotate="false">
+            </uib-pagination>
+          </div>
+        </main>
+
       </div>
-    </aside>
-
-    <div class="categories">
-
-      <header>
-        <div class="header">
-          <button class="menu"></button>
-          <search></search>
-        </div>
-      </header>
-
-      <main>
-
-        <div ng-repeat="itemVideo in mainCtrl.videos" class="col-md-3 video animated fadeIn">
-          <a ng-click="mainCtrl.goToVideoDetail(itemVideo.id)">
-            <figure>
-              <div class="image">
-                <img ng-src="{{itemVideo.pictures.sizes[3].link}}">
-              </div>
-              <figcaption>{{itemVideo.name}}</figcaption>
-            </figure>
-          </a>
-        </div>
-
-        <div class="pagination-container">
-          <uib-pagination
-            total-items="mainCtrl.total"
-            ng-model="mainCtrl.page"
-            max-size="mainCtrl.maxSize"
-            class="pagination"
-            items-per-page="mainCtrl.perPage"
-            ng-change="mainCtrl.changePage()"
-            boundary-link-numbers="true"
-            rotate="false">
-          </uib-pagination>
-        </div>
-      </main>
 
     </div>
-
   </div>
-</div>
+</section>
+<loader></loader>

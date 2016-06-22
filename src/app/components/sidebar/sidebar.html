@@ -1,11 +1,13 @@
-<nav>
-  <button class="close-btn">X</button>
-  <div class="logo">
-    <img src="../../assets/images/vimeotest-logo.svg">
-  </div>
-  <ul>
-    <li ng-repeat="link in links | limitTo: 8" ui-sref-active="active">
-      <a ui-sref="{{link.state}}({{link.params}})">{{link.name}}</a>
-    </li>
-  </ul>
-</nav>
+<div class="sidebar padding active" ng-swipe-left="closeNav()">
+  <nav>
+    <button class="close-btn">X</button>
+    <div class="logo">
+      <img src="../../assets/images/vimeotest-logo.svg">
+    </div>
+    <ul>
+      <li ng-repeat="link in links | limitTo: 8" ui-sref-active="active">
+        <a ui-sref="{{link.state}}({{link.params}})">{{link.name}}</a>
+      </li>
+    </ul>
+  </nav>
+</div>

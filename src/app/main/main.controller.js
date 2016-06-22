@@ -23,7 +23,7 @@
     //Go to video detail
     vm.goToVideoDetail = function (Id) {
       $state.go('home.detail', {videoId: Id})
-    }
+    };
   }
 
 })();
