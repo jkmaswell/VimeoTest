@@ -12,7 +12,7 @@
         decimals = 1,
         suffixes = ['k', 'M', 'G', 'T', 'P', 'E'];
 
-      if(window.isNaN(input)) {
+      if(!angular.isNumber(input)) {
         return null;
       }
 
