@@ -1,6 +1,7 @@
 .categories {
   &.detail {
     .player {
+      background: $vimeo-black;
       height: 0;
       padding-bottom: 540px / 1280px * 100%;
       position: relative;
@@ -8,9 +9,14 @@
       iframe {
         height: 100%;
         left: 0;
+        padding: 0 8%;
         position: absolute;
         top: 0;
         width: 100%;
+
+        @media screen and (max-width: 767px) {
+          padding: 20px;
+        }
       }
     }
 
